@@ -349,7 +349,7 @@ def run_quality_checks(year: str, local_only: bool = False, strict: bool = False
     report_dir.mkdir(parents=True, exist_ok=True)
     report_path = report_dir / f"quality_report_{year}.json"
     with open(report_path, "w") as f:
-        json.dump(summary, f, indent=2)
+        json.dump(summary, f, indent=2, default=lambda x: int(x) if hasattr(x, 'item') else str(x))
 
     # Final status
     logger.info("=" * 60)

@@ -42,13 +42,13 @@ from config.settings import (
 # CMS Medicare Part D Prescribers — By Provider and Drug
 # Direct CSV download URL (no API key required, 100% public)
 CMS_DOWNLOAD_URLS = {
+    "2023": (
+        "https://data.cms.gov/sites/default/files/2025-04/"
+        "0d5915ce-002c-4d87-bde8-24ffb08bb6cc/MUP_DPR_RY25_P04_V10_DY23_NPIBN.csv"
+    ),
     "2022": (
         "https://data.cms.gov/sites/default/files/2024-04/"
-        "MUP_DPR_RY24_P04_V10_DY22_PRDRUG.csv"
-    ),
-    "2021": (
-        "https://data.cms.gov/sites/default/files/2023-04/"
-        "MUP_DPR_RY23_P04_V10_DY21_PRDRUG.csv"
+        "MUP_DPR_RY24_P04_V10_DY22_NPIBN.csv"
     ),
 }
 
