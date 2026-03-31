@@ -1,0 +1,53 @@
+# Environment & secrets — NEVER commit these
+.env
+*.pem
+*.key
+credentials
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data files — too large for Git
+data/
+*.csv
+*.parquet
+*.json
+!tests/fixtures/*.csv    # Allow small test fixtures
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# AWS CDK / SAM
+cdk.out/
+.aws-sam/
