@@ -185,3 +185,24 @@ pytest tests/ -v
 - Data quality validation
 - CI/CD with GitHub Actions
 - Git version control and project documentation
+
+## 🔍 Key Analytical Findings
+
+### Outlier Analysis: Ultra-High Cost Drugs (>$100k per claim)
+Running the quality check pipeline surfaced 5 records exceeding $100,000
+cost-per-claim. Investigation confirmed these are **not data errors** but
+legitimate rare disease treatments:
+
+| Drug | Indication | Cost/Claim |
+|---|---|---|
+| Elapegademase-Lvlr (Revcovi) | ADA-SCID (rare immune deficiency) | $256,508 |
+| Glycerol Phenylbutyrate (Ravicti) | Urea cycle disorders | $120,891 |
+| Asfotase Alfa (Strensiq) | Hypophosphatasia (rare bone disease) | $104–135k |
+| Asciminib HCl (Scemblix) | Chronic myeloid leukemia | $107,363 |
+
+**Insight:** These orphan drugs represent <0.001% of claims but
+disproportionately impact total Medicare spend — a pattern relevant
+to pharmacy benefit management and formulary design decisions.
+
+**Pipeline response:** Flagged as WARNING (not CRITICAL) since values
+are medically valid. Documented for downstream analyst awareness.
